@@ -1,0 +1,17 @@
+DROP DATABASE IF EXISTS cine;
+
+CREATE DATABASE cine;
+
+USE cine;
+
+CREATE TABLE peliculas (
+  director VARCHAR(128) NOT NULL,
+  titulo VARCHAR(128) NOT NULL,
+  fecha DATETIME NOT NULL
+);
+
+INSERT INTO peliculas (director,titulo,fecha) VALUES
+('Steven Spielberg','Jurassic Park','1993/01/01'),
+('Steven Spielberg','Empire of the Sun','1987/01/01'),
+('Alfred Hitchcock','Psycho','1960/01/01'),
+('Alfred Hitchcock','North By Northwest','1959/01/01');
