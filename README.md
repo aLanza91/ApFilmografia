@@ -1,6 +1,8 @@
 # ApFilmografia
 Ejercicio Consulta Directores Cine.
+
 Context root: filmografia.
+
 SQL de la base de tatos en la raíz del proyecto.
 
 DATASOURCE:
