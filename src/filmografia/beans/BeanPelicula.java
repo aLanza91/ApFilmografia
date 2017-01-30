@@ -3,7 +3,7 @@ package filmografia.beans;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Pelicula implements Serializable{
+public class BeanPelicula implements Serializable{
 
 	private String director;
 	private String titulo;
@@ -11,7 +11,7 @@ public class Pelicula implements Serializable{
 	/**
 	 * Constructor por defecto
 	 */
-	public Pelicula(){
+	public BeanPelicula(){
 		this.director = "";
 		this.titulo = "";
 		this.fecha = new Date();
@@ -22,7 +22,7 @@ public class Pelicula implements Serializable{
 	 * @param titulo
 	 * @param fecha
 	 */
-	public Pelicula(String director,String titulo, Date fecha){
+	public BeanPelicula(String director,String titulo, Date fecha){
 		this.director=director;
 		this.titulo=titulo;
 		this.fecha=fecha;
