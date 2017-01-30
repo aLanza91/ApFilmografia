@@ -23,7 +23,6 @@
 		<%}%> 
 <form action="index.jsp" method="get">
 <input type="submit" value="volver">
-<input type="hidden" name="nombre" value='<%=request.getAttribute("nombre") %>' />
 </form>
 </div>
 </body>
