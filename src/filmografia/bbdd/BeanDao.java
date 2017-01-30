@@ -58,7 +58,7 @@ public class BeanDao {
 		ArrayList<BeanPelicula> listaPeliculas = new ArrayList<BeanPelicula>();
 		String director = request.getParameter("director");
 		Statement st = conexion.createStatement();
-		ResultSet rs = st.executeQuery("select director,titulo,fecha from login where director = '" + director + "'");
+		ResultSet rs = st.executeQuery("select director,titulo,fecha from peliculas where director = '" + director + "'");
 		if (rs.next()){
 			while(rs.next()){
 				pelicula = new BeanPelicula (rs.getString("director"),rs.getString("titulo"),rs.getDate("fecha"));

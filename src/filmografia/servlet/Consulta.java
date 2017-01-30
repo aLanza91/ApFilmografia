@@ -19,6 +19,7 @@ import filmografia.bbdd.BeanDao;
 import filmografia.beans.BeanPelicula;
 import filmografia.beans.BeanError;
 
+
 @SuppressWarnings("serial")
 @WebServlet(name="Consulta",urlPatterns="/consultar")
 public class Consulta extends HttpServlet{
@@ -36,6 +37,7 @@ public class Consulta extends HttpServlet{
 	
 	
 	public void init(ServletConfig config) throws ServletException {
+		System.out.println("Comienzo de init del servlet Consulta");
     	super.init(config);
     	ServletContext application = config.getServletContext();
     	//String urlDataSource = (String) application.getInitParameter("URLDataSource");
