@@ -19,6 +19,7 @@ import filmografia.bbdd.BeanDao;
 import filmografia.beans.BeanPelicula;
 import filmografia.beans.BeanError;
 
+@SuppressWarnings("serial")
 @WebServlet(name="Consulta",urlPatterns="/consultar")
 public class Consulta extends HttpServlet{
 	
@@ -43,10 +44,12 @@ public class Consulta extends HttpServlet{
 		try {
 			initCtx = new InitialContext();
 			this.dscine = (DataSource) initCtx.lookup(urlDataSource);
+			System.out.println("DataSource CONECTADO");
 		} catch (NamingException e) {
 			appOperativa = false;
     	}
 		beanDao = new BeanDao(dscine);
+		System.out.println("Bendao INICIALIZADO con DataSource dscine");
 	}
 	
 	/**
@@ -71,6 +74,7 @@ public class Consulta extends HttpServlet{
 				beanDao.getConexion();
 				listaPeliculas = beanDao.getPeliculas(request);
 				beanDao.close();
+				System.out.println("Conexion con beanDao y realizado metodo getPeliculas");
 			} catch (SQLException e) {
 				error = new BeanError(1,"Error en conexión a base de datos");
 			} catch (BeanError e){

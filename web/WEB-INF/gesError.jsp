@@ -11,6 +11,7 @@
 </style>
 </head>
 <body>
+<h3>Página de gestión de errores</h3>
 <div>
 <%	
 	if (request.getAttribute("error") != null) {

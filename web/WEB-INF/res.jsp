@@ -14,6 +14,8 @@
 		for(BeanPelicula p:listaPeliculas){
 			out.write("Título: "+p.getTitulo()+", fecha: "+p.getFecha()+"<br>");	
 		}
+	}else{
+		out.write("No existen peliculas en la BBDD");
 	}
  %>
 </body>
