@@ -74,8 +74,9 @@ public class Consulta extends HttpServlet{
 		    rd.forward(request,response);
 		}else{
 			try {
+				String director = request.getParameter("director");
 				beanDao.getConexion();
-				listaPeliculas = beanDao.getPeliculas(request);
+				listaPeliculas = beanDao.getPeliculas(director);
 				beanDao.close();
 				System.out.println("Conexion con beanDao y realizado metodo getPeliculas");
 			} catch (SQLException e) {
