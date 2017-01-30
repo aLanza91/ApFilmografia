@@ -15,9 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+
 import filmografia.bbdd.BeanDao;
-import filmografia.beans.BeanPelicula;
 import filmografia.beans.BeanError;
+import filmografia.beans.BeanPelicula;
 
 
 @SuppressWarnings("serial")
@@ -41,11 +42,11 @@ public class Consulta extends HttpServlet{
     	super.init(config);
     	ServletContext application = config.getServletContext();
     	//String urlDataSource = (String) application.getInitParameter("URLDataSource");
-    	String urlDataSource = (String) application.getInitParameter("java:jboss/datasources/dscine");
+    	//String urlDataSource = (String) application.getInitParameter("java:jboss/datasources/dscine");
     	InitialContext initCtx = null;
 		try {
 			initCtx = new InitialContext();
-			this.dscine = (DataSource) initCtx.lookup(urlDataSource);
+			this.dscine = (DataSource) initCtx.lookup("java:jboss/datasources/dscine");
 			System.out.println("DataSource CONECTADO");
 		} catch (NamingException e) {
 			appOperativa = false;
