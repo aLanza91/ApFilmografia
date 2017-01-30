@@ -69,7 +69,7 @@ public class Consulta extends HttpServlet{
 		}else{
 			try {
 				beanDao.getConexion();
-				beanDao.setUsuario(request);
+				listaPeliculas = beanDao.getPeliculas(request);
 				beanDao.close();
 			} catch (SQLException e) {
 				error = new BeanError(1,"Error en conexión a base de datos");
@@ -77,6 +77,19 @@ public class Consulta extends HttpServlet{
 				error = e;
 			}
 		}
+		
+		if(error==null){
+			request.setAttribute("error", error);
+			request.setAttribute("listaPeliculas", listaPeliculas);
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/res.jsp");
+		    rd.forward(request,response);		
+		}else {
+			request.setAttribute("error", error);
+			request.setAttribute("listaPeliculas",new ArrayList<BeanPelicula>());
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/gesError.jsp");
+		    rd.forward(request,response);
+		}
+		
 	}
 	
 }
